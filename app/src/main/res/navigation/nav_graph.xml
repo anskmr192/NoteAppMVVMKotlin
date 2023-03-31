@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment2">
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.noteappmvvmkotlin.UI.Fragments.HomeFragment"
+        android:label="Notes App"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_createNotesFragment2"
+            app:destination="@id/createNotesFragment2" />
+        <action
+            android:id="@+id/action_homeFragment2_to_editNotesFragment3"
+            app:destination="@id/editNotesFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNotesFragment2"
+        android:name="com.example.noteappmvvmkotlin.UI.Fragments.CreateNotesFragment"
+        android:label="Create New Notes"
+        tools:layout="@layout/fragment_create_notes" >
+        <action
+            android:id="@+id/action_createNotesFragment2_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/editNotesFragment3"
+        android:name="com.example.noteappmvvmkotlin.UI.Fragments.EditNotesFragment"
+        android:label="Edit Notes"
+        tools:layout="@layout/fragment_edit_notes" >
+        <argument
+            android:name="data"
+            app:argType="com.example.noteappmvvmkotlin.Models.Notes" />
+        <action
+            android:id="@+id/action_editNotesFragment3_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+</navigation>
